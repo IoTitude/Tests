@@ -1,5 +1,5 @@
 *** Settings ***
-Library           ExtendedSelenium2Library
+Library           Selenium2Library
 
 *** Variables ***
 ${Browser}        Firefox
