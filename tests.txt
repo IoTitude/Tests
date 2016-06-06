@@ -3,7 +3,7 @@ Library           Selenium2Library
 
 *** Variables ***
 ${Browser}        Firefox
-${SiteUrl}        http://bowsse.github.io
+${SiteUrl}        http://bowsse.github.io/webdev
 
 *** Test Cases ***
 test
