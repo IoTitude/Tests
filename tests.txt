@@ -1,9 +1,9 @@
 *** Settings ***
-Library           Selenium2Library
+Library           ExtendedSelenium2Library
 
 *** Variables ***
 ${Browser}        Firefox
-${SiteUrl}        http://bowsse.github.io/webdev
+${SiteUrl}        http://bowsse.github.io/
 
 *** Test Cases ***
 test
