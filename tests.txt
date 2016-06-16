@@ -3,7 +3,7 @@ Library           ExtendedSelenium2Library
 
 *** Variables ***
 ${Browser}        Firefox
-${SiteUrl}        http://0.0.0.0:8100/
+${SiteUrl}        http://localhost:8100/
 
 *** Test Cases ***
 test
