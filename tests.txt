@@ -3,10 +3,10 @@ Library           ExtendedSelenium2Library
 
 *** Variables ***
 ${Browser}        Firefox
-${SiteUrl}        http://bowsse.github.io/
+${SiteUrl}        http://0.0.0.0:8100/
 
 *** Test Cases ***
 test
     open browser    ${SiteUrl}    ${Browser}
-    wait until page contains     Bowsse
+    wait until page contains     Login
     close browser
