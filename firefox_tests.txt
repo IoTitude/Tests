@@ -8,5 +8,5 @@ ${SiteUrl}        http://localhost:8100/
 *** Test Cases ***
 Title test
     open browser    ${SiteUrl}    ${Browser}
-    title should be     Login
+    title should be     Logins
     close browser
