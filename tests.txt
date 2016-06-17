@@ -1,12 +1,1 @@
-*** Settings ***
-Library           ExtendedSelenium2Library
-
-*** Variables ***
-${Browser}        Firefox
-${SiteUrl}        http://localhost:8100/
-
-*** Test Cases ***
-test
-    open browser    ${SiteUrl}    ${Browser}
-    title should be     Login
-    close browser
+firefox_tests.txt
