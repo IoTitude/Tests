@@ -9,4 +9,4 @@ ${SiteUrl}        http://localhost:8100/
 Title test
     open browser    ${SiteUrl}    ${Browser}
     title should be     Login
-close browser
+    close browser
