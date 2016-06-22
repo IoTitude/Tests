@@ -1,0 +1,49 @@
+.. default-role:: code
+
+============
+Scenario 1
+============
+
+Browser: Firefox
+
+
+.. contents:: Table of contents
+   :local:
+   :depth: 2
+
+=================
+Scenario 1 Tests
+=================
+
+kuvaus
+
+.. code:: robotframework
+
+	*** Settings ***
+	Resource 		resources.txt
+
+
+.. code:: robotframework
+
+	*** Variables ***
+	${Browser}          Firefox
+	${SiteUrl}          http://localhost:8100/
+	${InvalidUser}      asd
+	${InvalidPassword}  asdasd
+
+.. code:: robotframework
+
+    	*** Test Cases ***
+	Open browser
+		open browser    ${SiteUrl}    ${Browser}
+		title should be     Login
+
+
+
+.. code:: robotframework
+
+    	*** Test Cases ***
+	Invalid Login
+		Invalid Login    ${InvalidUser}    ${InvalidPassword}
+		
+
