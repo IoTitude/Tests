@@ -13,3 +13,25 @@ ${Title}            Login
 Open Browser To Login Page
    open browser    ${SiteUrl}    ${Browser}
    title should be     ${Title}
+
+Invalid Login
+    [Arguments]    ${username}    ${password}
+    Input Username    ${username}
+    Input User Password    ${password}
+    Submit Credentials
+    Login Should Have Failed
+    
+Input Username
+    [Arguments]    ${username}
+    Input Text    //input[@ng-model='data.username']    ${username}
+
+Input User Password
+    [Arguments]    ${password}
+    Input Password    //input[@type='password']    ${password}
+    
+Submit Credentials
+    Click Button    ///button[@ng-click='login()']
+
+Login Should Have Failed
+    Title Should Be      ${Title}
+    Element Should Contain    //div[@class='popup']   unauthorized
