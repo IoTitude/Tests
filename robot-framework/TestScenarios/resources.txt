@@ -1,0 +1,15 @@
+*** Settings ***
+Library ExtendedSelenium2Library
+
+
+*** Variables ***
+${Browser}          Firefox
+${SiteUrl}          http://localhost:8100/
+${InvalidUser}      asd
+${InvalidPassword}  asdasd
+${Title}            Login
+
+*** Keywords ***
+Open Browser To Login Page
+    open browser    ${SiteUrl}    ${Browser}
+   	title should be     ${Title}
