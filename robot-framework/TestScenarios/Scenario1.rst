@@ -25,25 +25,9 @@ kuvaus
 
 .. code:: robotframework
 
-	*** Variables ***
-	${Browser}          Firefox
-	${SiteUrl}          http://localhost:8100/
-	${InvalidUser}      asd
-	${InvalidPassword}  asdasd
-
-.. code:: robotframework
-
     	*** Test Cases ***
 	Open browser
 		open browser    ${SiteUrl}    ${Browser}
 		title should be     Login
 
-
-
-.. code:: robotframework
-
-    	*** Test Cases ***
-	Invalid Login
-		Invalid Login    ${InvalidUser}    ${InvalidPassword}
-		
 
