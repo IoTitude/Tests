@@ -6,6 +6,9 @@ Scenario 1
 
 Browser: Firefox
 
+Actor: `Matias Moilanen <https://github.com/IoTitude/IOTCity/wiki/persoonakuvaukset#asentaja-2>`_
+
+Matias is an installer who installs metering units for IoTCity-system.
 
 .. contents:: Table of contents
    :local:
@@ -15,7 +18,6 @@ Browser: Firefox
 Scenario 1 Tests
 =================
 
-kuvaus
 
 .. code:: robotframework
 
