@@ -35,3 +35,6 @@ Submit Credentials
 Login Should Have Failed
     Title Should Be      ${Title}
     Element Should Contain    //div[@class='popup']   unauthorized
+    
+Click Popup Ok
+    Click Button      //button[contains(.,'OK')]
