@@ -28,8 +28,22 @@ Scenario 1 Tests
 .. code:: robotframework
 
     	*** Test Cases ***
-	Open browser
-		open browser    ${SiteUrl}    ${Browser}
-		title should be     Login
+   Matias Opens Browser	
+	Open browser To Login Page
 
 
+.. code:: robotframework
+
+    	*** Test Cases ***
+    Matias Tries To Login
+        Input Username         ${InvalidUser}
+        Input User Password    ${InvalidPassword}
+        Submit Credentials
+        Login Should Have Failed
+        Click Popup Ok
+        
+.. code:: robotframework
+
+    	*** Test Cases ***
+    Matias Rage Quits
+        Close Browser
