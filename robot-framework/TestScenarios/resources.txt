@@ -11,5 +11,5 @@ ${Title}            Login
 
 *** Keywords ***
 Open Browser To Login Page
-    open browser    ${SiteUrl}    ${Browser}
-   	title should be     ${Title}
+   open browser    ${SiteUrl}    ${Browser}
+   title should be     ${Title}
