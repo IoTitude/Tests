@@ -1,2 +1,1 @@
-TestScenarios/firefox_tests.txt
 TestScenarios/Scenario1.rst
