@@ -29,7 +29,7 @@ Valid Login
     Input Username    ${username}
     Input User Password    ${password}
     Submit Credentials
-    Title Should Be ${TasksTitle}
+    Title Should Be    ${TasksTitle}
 
 Input Username
     [Arguments]    ${username}
