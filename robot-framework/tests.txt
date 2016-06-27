@@ -1,4 +1,4 @@
-browsser:   firefox
+browser:   firefox
 TestScenarios/Scenario1.rst
 @@@
 browser:   chrome
