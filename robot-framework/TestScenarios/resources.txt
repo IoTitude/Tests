@@ -10,7 +10,7 @@ ${InvalidPassword}  asdasd
 ${ValidUser}        admin
 ${ValidPassword}    admin
 ${LoginTitle}       Login
-${TasksTitle}        Tasks
+${TasksTitle}       Tasks
 
 *** Keywords ***
 Open Browser To Login Page
@@ -48,3 +48,17 @@ Login Should Have Failed
     
 Click Popup Ok
     Click Button      //button[contains(.,'OK')]
+    
+Click Qr Tab
+    Click Element    //i[@class='icon ion-qr-scanner']
+
+Click Logout Tab
+    Click Element    //i[@class='icon ion-log-out']
+
+Click Tasks Tab
+    Click Element    //i[@class='icon ion-clipboard']
+
+Click Logout Button
+    Click Element    //button[@ng-click='logout()']
+
+
