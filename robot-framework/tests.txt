@@ -1,1 +1,6 @@
+browsser:   firefox
 TestScenarios/Scenario1.rst
+@@@
+browser:   chrome
+TestScenarios/Scenario2.rst
+@@@
