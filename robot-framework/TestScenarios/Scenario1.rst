@@ -61,9 +61,9 @@ Matias finds a piece of paper in his pocket. It has two words written on it and 
    *** Test Cases ***
    Successful Login
         Valid Login    ${ValidUser}      ${ValidPassword}
-        Click Popup Ok
 
 Success. Instapp shows a task list which tells Matias exactly what to do.
+
 
 
 .. code:: robotframework
