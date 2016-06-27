@@ -48,20 +48,30 @@ After opening the app, a login screen is shown on the screen. Because the hit in
 
    *** Test Cases ***
    Matias Tries To Login
-        Input Username         ${InvalidUser}
-        Input User Password    ${InvalidPassword}
-        Submit Credentials
-        Login Should Have Failed
+        Invalid Login     ${InvalidUser}     ${InvalidPassword}
         Click Popup Ok
         
 
 
-Then Matias gets angry and closes Instapp.
-        
+Matias finds a piece of paper in his pocket. It has two words written on it and Matias tries to use them to login.
 
 
 .. code:: robotframework
 
    *** Test Cases ***
-   Matias Rage Quits
+   Successful Login
+        Valid Login    ${ValidUser}      ${ValidPassword}
+        Click Popup Ok
+
+Success. Instapp shows a task list which tells Matias exactly what to do.
+
+
+.. code:: robotframework
+
+   *** Test Cases ***
+   Logout
+        Click Logout Tab
+        Click Logout Button
         Close Browser
+
+
