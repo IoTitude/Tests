@@ -7,12 +7,15 @@ ${Browser}          Firefox
 ${SiteUrl}          http://localhost:8100/
 ${InvalidUser}      asd
 ${InvalidPassword}  asdasd
-${Title}            Login
+${ValidUser}        admin
+${ValidPassword}    admin
+${LoginTitle}       Login
+${TasksTitle}        Tasks
 
 *** Keywords ***
 Open Browser To Login Page
    open browser    ${SiteUrl}    ${Browser}
-   title should be     ${Title}
+   title should be     ${LoginTitle}
 
 Invalid Login
     [Arguments]    ${username}    ${password}
@@ -21,6 +24,13 @@ Invalid Login
     Submit Credentials
     Login Should Have Failed
     
+Valid Login
+    [Arguments]    ${username}    ${password}
+    Input Username    ${username}
+    Input User Password    ${password}
+    Submit Credentials
+    Title Should Be ${TasksTitle}
+
 Input Username
     [Arguments]    ${username}
     Input Text    //input[@ng-model='data.username']    ${username}
@@ -33,7 +43,7 @@ Submit Credentials
     Click Button    ///button[@ng-click='login()']
 
 Login Should Have Failed
-    Title Should Be      ${Title}
+    Title Should Be      ${LoginTitle}
     Element Should Contain    //div[@class='popup']   unauthorized
     
 Click Popup Ok
