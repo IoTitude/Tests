@@ -1,5 +1,5 @@
 *** Settings ***
-Library ExtendedSelenium2Library
+Library             ExtendedSelenium2Library
 
 
 *** Variables ***
