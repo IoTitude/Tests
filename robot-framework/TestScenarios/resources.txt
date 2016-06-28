@@ -4,6 +4,7 @@ Library ExtendedSelenium2Library
 
 *** Variables ***
 ${Browser}          Firefox
+${Chrome}           google-chrome
 ${SiteUrl}          http://localhost:8100/
 ${InvalidUser}      asd
 ${InvalidPassword}  asdasd
