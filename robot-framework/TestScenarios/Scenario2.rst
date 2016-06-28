@@ -25,5 +25,6 @@ Scenario 2 Tests
 .. code:: robotframework
 
    *** Test Cases ***
-   open browser    ${SiteUrl}    ${Chrome}
-   title should be     ${LoginTitle}
+   Open Browser
+      open browser    ${SiteUrl}    ${Chrome}
+      title should be     ${LoginTitle}
