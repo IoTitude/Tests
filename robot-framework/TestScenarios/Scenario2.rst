@@ -25,6 +25,5 @@ Scenario 2 Tests
 .. code:: robotframework
 
    *** Test Cases ***
-   Open Instapp
-       Open browser To Login Page
-
+   open browser    ${SiteUrl}    ${Chrome}
+   title should be     ${LoginTitle}
