@@ -3,20 +3,19 @@ Unit testing of Instapp with Karma and Jasmine.
 
 ## Project setup
 
-```shell
-git clone https://github.com/IoTitude/Instapp.git  Instapp
-cd Instapp
-git fetch --tags
-latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
-git checkout $latestTag
-```
+Get [Instapp.](https://github.com/IoTitude/Instapp)
 
+Then install Karma and Jasmine.
 ```shell
 npm install karma karma-jasmine karma-phantomjs-launcher --save-dev
-sudo npm install -g karma-cli
-sudo npm install 
+npm install -g karma-cli
+npm install -g bower
+npm install gulp -g
+npm install 
 bower install angular-mocks --save-dev
-
+```
+Generate Karma configuration file.
+```shell
 mkdir tests
 cd tests
 karma init my.conf.js
@@ -28,14 +27,14 @@ Add files to load in my.conf.js
 files: [
   '../www/lib/angular/angular.js',
   '../www/js/*.js',
+  '../www/js/*/*.js',
   '../www/lib/angular-mocks/angular-mocks.js',
-  '**/*tests.js'
+  '**/*tests.js',
+  '../tests/*tests.js'
 ],
 ```
-
 And change the browser to PhantomJS
 ```javascript
-// Use the PhantomJS browser instead of Chrome
 browsers: ['PhantomJS'],
 ```
 
