@@ -5,7 +5,7 @@ Unit testing of Instapp with Karma and Jasmine.
 
 Get [Instapp.](https://github.com/IoTitude/Instapp)
 
-Then install Karma and Jasmine.
+Then install Karma and Jasmine in Instapp directory.
 ```shell
 npm install karma karma-jasmine karma-phantomjs-launcher --save-dev
 npm install -g karma-cli
