@@ -51,7 +51,7 @@ gulp.task('test', function(done) {
     });
 });
 ```
-Copy the Controllers directory to Instapp/tests.
+Clone test directories from unnit-testing/tests to Instapp/tests.
 
 Run the tests
 
