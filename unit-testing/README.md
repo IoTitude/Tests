@@ -1,5 +1,5 @@
 # Unit Testing
-Unit testing of Instapp with Karma and Jasmine.
+Unit testing of Instapp with [Karma](https://karma-runner.github.io/1.0/index.html) and [Jasmine.](http://jasmine.github.io/)
 
 ## Project setup
 
