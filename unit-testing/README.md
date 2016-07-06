@@ -51,7 +51,7 @@ gulp.task('test', function(done) {
     });
 });
 ```
-Clone test directories from unnit-testing/tests to Instapp/tests.
+Clone test directories from unit-testing/tests to Instapp/tests.
 
 Run the tests
 
