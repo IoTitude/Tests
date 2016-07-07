@@ -58,3 +58,12 @@ Run the tests
 ```shell
 gulp test
 ```
+## Docker image
+
+* Installs Instapp
+* Installs testing framework
+* Fetches tests from github
+* Runs tests and exits
+```shell
+docker run iotitude/unit_test
+``` 
