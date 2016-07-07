@@ -18,41 +18,23 @@ describe("Controller", function() {
     {
 			q = $q
 			$scope = $rootScope.$new();
-
 			deferred = q.defer();
 
-			BaasBoxServiceMock = {
-				login: function(username, password) {
-					//return q.when();
-					var deferred = q.defer();
-					deferred.resolve();
-					return deferred.promise;
-				},
-				setToken: function(newToken) {
-					token = newToken
-				},
-				getTasks: function() {
-					return 'tasks updated'
-				}
-			};
-			stateMock = {
-				go: function(dest) {
-					return dest
-				}
-			}
-			ErrorServiceMock = {
-				handleError: function() {
-					return 'ErrorHandled'
-				}
-			}
-			TasksServiceMock = {
-				set: function(t) {
-					tasks = t
-				},
-				get: function() {
-					return tasks
-				}
-			}
+
+        	BaasBoxServiceMock = {
+
+          		login: jasmine.createSpy('login spy')
+            									.and.returnValue(deferred.promise)
+      		};
+
+        stateMock = jasmine.createSpyObj('$state spy', ['go']);
+
+      	ErrorServiceMock = jasmine.createSpyObj('ErrorService spy', ['handleError']);
+
+        ionicPopupMock = jasmine.createSpyObj('$ionicPopup spy', ['alert']);
+
+			  TasksServiceMock = jasmine.createSpy('TasksService spy');
+
 
 			$controller('LoginController', {
 				$scope: $scope,
@@ -70,18 +52,11 @@ describe("Controller", function() {
 		});
 
 		it('login should be called', function() {
-			var promise = q.when();
 
-			spyOn(BaasBoxServiceMock, 'login').and.returnValue(promise);
-			//BaasBoxServiceMock.logout();
-			//spyOn($scope, 'logout');
 			$scope.login();
-			//spyOn(stateMock, 'go');
-			//stateMock.go();
 
-			//expect($scope.logout).toHaveBeenCalled();
+
 			expect(BaasBoxServiceMock.login).toHaveBeenCalled();
-			//expect(stateMock.go).toHaveBeenCalled();
 
 		});
 		it('login should have been called with credentials', function() {
@@ -89,37 +64,30 @@ describe("Controller", function() {
 			$scope.data.username = 'user'
 			$scope.data.password = 'pw'
 
-			var promise = q.when();
-
-			spyOn(BaasBoxServiceMock, 'login').and.returnValue(promise);
 
 			$scope.login();
 
 			expect(BaasBoxServiceMock.login).toHaveBeenCalledWith('user', 'pw');
 
-			//expect(BaasBoxServiceMock.login('user', 'pw')).toEqual('loginCalled');
-
 		});
-		
-		it('async test', function() {
 
-			$scope.data.username = 'user'
+    it('should continue', function() {
+
+      $scope.data.username = 'user'
 			$scope.data.password = 'pw'
-			deferred.resolve(1);
-			//var promise = q.when();
 
-			spyOn(BaasBoxService, 'login').and.returnValue(deferred.promise);
+      $scope.login();
 
-			$scope.$apply();
+      //BaasBoxServiceMock.login response is resolved here (continues to .then)
+			deferred.resolve();
 
-			$scope.login();
+			//Promises are only resolved when Angular digest cycle is triggered
+			//$scope.$digest();
 
-			spyOn(BaasBoxService, 'setToken');
+      expect(BaasBoxServiceMock.login).toHaveBeenCalledWith('user', 'pw');
 
-			expect(BaasBoxService.login).toHaveBeenCalled();
+  	});
 
 
-
-		});
 	});
 });
