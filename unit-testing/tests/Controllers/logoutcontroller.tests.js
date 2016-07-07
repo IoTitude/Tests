@@ -8,6 +8,7 @@ describe("Controller", function() {
 		ErrorServiceMock,
 		BaasBoxServiceMock,
 		q,
+    deferred,
 		ionicPopupMock;
 
 		beforeEach(module('instapp.logoutController'));
@@ -16,22 +17,20 @@ describe("Controller", function() {
     {
 			q = $q;
 			$scope = $rootScope.$new();
+      deferred = q.defer();
 
-			BaasBoxServiceMock = {
-				logout: function() {
-					return 'logoutCalled';
-				},
-			};
-			stateMock = {
-				go: function() {
-					return 'StateChanged';
-				}
-			}
-			ErrorServiceMock = {
-				handleError: function() {
-					return 'ErrorHandled';
-				}
-			}
+      			BaasBoxServiceMock = {
+
+      				logout: jasmine.createSpy('logout spy')
+      											.and.returnValue(deferred.promise)
+				};
+
+      stateMock = jasmine.createSpyObj('$state spy', ['go']);
+
+			ErrorServiceMock = jasmine.createSpyObj('ErrorService spy', ['handleError']);
+
+      ionicPopupMock = jasmine.createSpyObj('$ionicPopup spy', ['alert']);
+
 
 			$controller('LogoutController', {
 				$scope: $scope,
@@ -48,20 +47,27 @@ describe("Controller", function() {
 		});
 
 		it('logout should be called', function() {
-			var promise = q.when();
 
-			spyOn(BaasBoxServiceMock, 'logout').and.returnValue(promise);
-			//BaasBoxServiceMock.logout();
-			//spyOn($scope, 'logout');
 			$scope.logout();
-			//spyOn(stateMock, 'go');
-			//stateMock.go();
 
 			//expect($scope.logout).toHaveBeenCalled();
+
 			expect(BaasBoxServiceMock.logout).toHaveBeenCalled();
-			//expect(stateMock.go).toHaveBeenCalled();
 
 		});
+    it('State should change to login', function() {
+
+
+      $scope.logout();
+
+      //BaasBoxServiceMock.login response is resolved here (continues to .then)
+			deferred.resolve();
+
+			//Promises are only resolved when Angular digest cycle is triggered
+			$scope.$digest();
+
+
+      expect(stateMock.go).toHaveBeenCalledWith('login');
+  	});
 	});
 });
-
