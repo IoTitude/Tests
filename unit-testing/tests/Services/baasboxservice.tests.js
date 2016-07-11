@@ -3,6 +3,7 @@ var BaasBoxService,
     SERVER_CONFIG,
     $httpMock,
     $http,
+
     httpBackend;
 
 
@@ -80,7 +81,20 @@ it("should toggle taskSDN", function() {
 });
 
 it("should set token", function() {
+  spyOn(BaasBoxService, 'setToken').and.callThrough();
 
+  spyOn(BaasBoxService, 'getTasks').and.callThrough();
+
+  BaasBoxService.setToken(1);
+
+  //session token should be set to 1 when callin getTasks()
+  httpBackend.expectGET('url/document/Master',
+   {"X-BB-SESSION":"1","X-BAASBOX-APPCODE":"123467890","Accept":"application/json, text/plain, */*"})
+        .respond('success');
+
+  BaasBoxService.getTasks();
+
+  httpBackend.flush();
 
 });
 
