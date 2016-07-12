@@ -39,8 +39,9 @@ module.exports = function(config) {
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['dots', 'junit'],
     
+    //result file in jenkins data-volume
     junitReporter: {
-      outputFile: 'test-results.xml'
+      outputFile: '/var/jenkins_home/volume/test-results.xml'
     },
 
 
