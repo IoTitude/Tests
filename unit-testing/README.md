@@ -24,13 +24,13 @@ karma init my.conf.js
 Add files to load in my.conf.js
 ```javascript
 // list of files / patterns to load in the browser
-files: [
-  '../www/lib/angular/angular.js',
+    files: [
+  '../www/lib/ionic/js/ionic.bundle.js',
+  '../www/lib/ionic/js/ionic.js',
   '../www/js/*.js',
   '../www/js/*/*.js',
   '../www/lib/angular-mocks/angular-mocks.js',
-  '**/*tests.js',
-  '../tests/*tests.js'
+  '../tests/*/*tests.js'
 ],
 ```
 And change the browser to PhantomJS
