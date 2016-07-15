@@ -41,7 +41,7 @@ module.exports = function(config) {
     
     //result file in jenkins data-volume
     junitReporter: {
-      outputFile: '/home/jaakko/test-results.xml'
+      outputFile: '/var/jenkins_home/Karma/karma_results/test-results.xml'
     },
 
 
