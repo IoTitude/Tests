@@ -16,8 +16,6 @@ ${TasksTitle}       Tasks
 *** Keywords ***
 Open Browser To Login Page
    open browser    ${SiteUrl}    ${Browser}
-   sleep  60
-   reload page
    title should be     ${LoginTitle}
 
 Invalid Login
