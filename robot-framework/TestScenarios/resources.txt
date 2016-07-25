@@ -45,7 +45,7 @@ Submit Credentials
 
 Login Should Have Failed
     Title Should Be      ${LoginTitle}
-    Element Should Contain    //div[@class='popup']   Unauthorized
+    Element Should Contain    //div[@class='popup']   401
     
 Click Popup Ok
     Click Button      //button[contains(.,'OK')]
@@ -58,6 +58,10 @@ Click Logout Tab
 
 Click Tasks Tab
     Click Element    //i[@class='icon ion-clipboard']
+    
+Toggle Task
+    Click Element    //label[@class='toggle']
+    Click Element    //button[contains(.,'OK')]
 
 Click Logout Button
     Click Element    //button[@ng-click='logout()']
