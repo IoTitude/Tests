@@ -23,8 +23,7 @@ Invalid Login
     Input Username    ${username}
     Input User Password    ${password}
     Submit Credentials
-    Login Should Have Failed
-    
+
 Valid Login
     [Arguments]    ${username}    ${password}
     Input Username    ${username}
