@@ -65,6 +65,13 @@ Matias finds a piece of paper in his pocket. It has two words written on it and 
 Success. Instapp shows a task list which tells Matias exactly what to do.
 
 
+.. code:: robotframework
+
+   *** Test Cases ***
+   Task Toggle
+        Click Element    //a[@href='#/tab/tasks/00-00-00-00-00-01']
+        Toggle Task
+
 
 .. code:: robotframework
 
